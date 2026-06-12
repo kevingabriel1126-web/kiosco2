@@ -3,7 +3,6 @@ const db = require("./BaseDatos");
 
 const router = express.Router();
 
-// ── OBTENER TODOS LOS PRODUCTOS ──────────────────────────────────────────────
 router.get("/productos", (req, res) => {
     db.query("SELECT * FROM productos ORDER BY id", (err, results) => {
         if (err) return res.status(500).json({ error: "Error al obtener productos" });
@@ -11,7 +10,7 @@ router.get("/productos", (req, res) => {
     });
 });
 
-// ── OBTENER UN PRODUCTO POR ID ───────────────────────────────────────────────
+
 router.get("/productos/:id", (req, res) => {
     db.query("SELECT * FROM productos WHERE id = ?", [req.params.id], (err, results) => {
         if (err) return res.status(500).json({ error: "Error al obtener producto" });
@@ -20,7 +19,7 @@ router.get("/productos/:id", (req, res) => {
     });
 });
 
-// ── ALTA: CREAR PRODUCTO ─────────────────────────────────────────────────────
+
 router.post("/productos", (req, res) => {
     const { nombre, precio, imagen, stock } = req.body;
 
@@ -44,7 +43,6 @@ router.post("/productos", (req, res) => {
     );
 });
 
-// ── MODIFICACIÓN: EDITAR PRODUCTO ────────────────────────────────────────────
 router.put("/productos/:id", (req, res) => {
     const { nombre, precio, imagen, stock } = req.body;
     const { id } = req.params;
@@ -64,7 +62,6 @@ router.put("/productos/:id", (req, res) => {
     );
 });
 
-// ── BAJA: ELIMINAR PRODUCTO ──────────────────────────────────────────────────
 router.delete("/productos/:id", (req, res) => {
     db.query("DELETE FROM productos WHERE id = ?", [req.params.id], (err, result) => {
         if (err) return res.status(500).json({ error: "Error al eliminar producto" });
@@ -73,7 +70,6 @@ router.delete("/productos/:id", (req, res) => {
     });
 });
 
-// ── VENTA: DESCONTAR STOCK ───────────────────────────────────────────────────
 router.post("/vender", (req, res) => {
     const { id, cantidad } = req.body;
 

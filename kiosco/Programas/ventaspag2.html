@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiosco - Tienda</title>
+    <link rel="stylesheet" href="estilos/estilos3.css">
+    <style>
+        .nav-abm {
+            text-align: center;
+            padding: 14px 0 0;
+        }
+        .nav-abm a {
+            color: #d293e6;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border: 1px solid #d293e6;
+            padding: 6px 16px;
+            border-radius: 20px;
+            transition: background 0.2s;
+        }
+        .nav-abm a:hover { background: rgba(210,147,230,0.15); }
+
+        .stock-texto { font-size: 0.82rem; margin: 2px 0 6px; }
+        #sin-productos {
+            color: #ccc;
+            text-align: center;
+            padding: 40px;
+            font-size: 1.1rem;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-abm">
+        <a href="/abm">⚙️ Administrar Productos</a>
+    </div>
+
+    <div class="container">
+        <div class="contenedor-padre" id="catalogo-productos">
+            <p id="sin-productos">Cargando productos...</p>
+        </div>
+    </div>
+
+    <script src="JavaScr/compras.js"></script>
+</body>
+</html>

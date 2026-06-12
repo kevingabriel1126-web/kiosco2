@@ -1,0 +1,75 @@
+body {
+    background: linear-gradient(90deg, #d293e6 0%, #671596 100%);
+    margin: 0; 
+    min-height: 100vh; 
+}
+.container {
+    width: 100%; 
+    display: flex;
+    justify-content: center; 
+}
+
+
+.contenedor-padre {
+    display: flex;          
+    flex-direction: row;      
+    flex-wrap: wrap;         
+    gap: 20px;                
+    padding: 20px;
+    justify-content: center; 
+}
+
+.caja {
+
+    justify-content: space-between; /* Separa los elementos dejando el botón abajo */
+    align-items: center;      /* Centra todo el contenido horizontalmente */
+     background: #16213E;
+    padding: 20px;
+    border: 1px solid #0F3460;
+    width: 300px;            
+    height: 380px;            
+    border-radius: 20px;
+    color:white;
+    box-sizing: border-box; /* Hace que el padding no estire la caja hacia afuera */
+    overflow: hidden;       /* Si algo intenta salirse, lo corta o lo oculta */
+    display: flex;          /* Usamos flexbox para ordenar el contenido verticalmente */
+    flex-direction: column; 
+    align-items: center;
+}
+
+.caja img {
+   width: 90%;      
+    height: 150px;        /* Le clavamos un alto fijo para que todas las cajas midan igual */
+      /* Mantiene la proporción de la foto sin deformarla ni estirarla */
+    display: block;        /* Elimina espacios fantasmas abajo de la imagen */
+    
+}
+
+
+.contador {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contador button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.cantidad {
+    font-weight: bold;
+}
+
+.btn-agregar {
+    background: linear-gradient(90deg, #FF006E 0%, #FF4E50 100%);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;             
+}
+
+
+
